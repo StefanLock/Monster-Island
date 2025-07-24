@@ -205,7 +205,9 @@ animations = [{
 radius = 6.0
 height = 14.0
 
-[node name="player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D" groups=["player"]]
+z_index = 1
+y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_plwmo")
 

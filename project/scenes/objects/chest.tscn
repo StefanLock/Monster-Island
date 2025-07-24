@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://krgxpxl4oek2"]
+
+[ext_resource type="Texture2D" uid="uid://crumlqg3uog8k" path="res://assets/world/chest.png" id="1_bas4e"]
+[ext_resource type="Script" uid="uid://iubmk53oxu72" path="res://scripts/chest.gd" id="1_opa1x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_opa1x"]
+atlas = ExtResource("1_bas4e")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acra8"]
+atlas = ExtResource("1_bas4e")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pev8c"]
+atlas = ExtResource("1_bas4e")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nj372"]
+atlas = ExtResource("1_bas4e")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vikd"]
+atlas = ExtResource("1_bas4e")
+region = Rect2(64, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eiphe"]
+atlas = ExtResource("1_bas4e")
+region = Rect2(80, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_or75c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_opa1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acra8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pev8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nj372")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vikd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eiphe")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bas4e"]
+size = Vector2(17, 20)
+
+[node name="Chest" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_opa1x")
+
+[node name="AnimatedChest" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_or75c")
+
+[node name="ChestArea" type="Area2D" parent="AnimatedChest"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedChest/ChestArea"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_bas4e")

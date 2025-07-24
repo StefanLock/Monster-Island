@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjg4og7qt11no"]
+
+[ext_resource type="PackedScene" uid="uid://0i6uhgj7ibr0" path="res://scenes/characters/player.tscn" id="1_0xfq3"]
+[ext_resource type="PackedScene" uid="uid://krgxpxl4oek2" path="res://scenes/objects/chest.tscn" id="2_4klvo"]
+
+[node name="Sandbox" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_0xfq3")]
+position = Vector2(483, 227)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(483, 227)
+zoom = Vector2(5, 5)
+
+[node name="Chest" parent="." instance=ExtResource("2_4klvo")]
+position = Vector2(326, 165)
