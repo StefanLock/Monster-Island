@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://by6i2s5p64kbi"]
 
-[ext_resource type="Script" uid="uid://dtmay6iyy0nvx" path="res://scripts/global/sound_fx.gd" id="1_yt72d"]
+[ext_resource type="Script" uid="uid://c0uh6c4kks0kc" path="res://scripts/global/sound_fx.gd" id="1_yt72d"]
 [ext_resource type="AudioStream" uid="uid://b5tfhpk2ypg7u" path="res://audio/chest.ogg" id="2_hxu8p"]
 
 [node name="SoundFx" type="Node"]

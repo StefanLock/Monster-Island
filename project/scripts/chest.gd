@@ -1,17 +1,25 @@
-extends Node2D
+extends StaticBody2D
 
 @onready var animated_chest: AnimatedSprite2D = $AnimatedChest
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$AnimatedChest/ChestArea.connect("body_entered",  _on_area_2d_area_entered)
-	
-	EventBus.connect("open_chest_requested", _on_open_chest_requested)
+	var chest_area: Area2D = $AnimatedChest/ChestArea
 
-func _on_area_2d_area_entered(body: CharacterBody2D) -> void:
+	chest_area.body_entered.connect(_on_chest_area_body_entered)
+	chest_area.body_exited.connect(_on_chest_area_body_exited)
+	
+	EventBus.open_chest_requested.connect(_on_open_chest_requested)
+
+# Change the function signature
+func _on_chest_area_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
-		EventBus.emit_signal("player_entered_chest_area")
-		print("player is near the chest")
-		
+		EventBus.player_entered_chest_area.emit()
+		print("Player is near the chest")
+
+func _on_chest_area_body_exited(body: Node) -> void:
+	if body.is_in_group("player"):
+		EventBus.player_exited_chest_area.emit()
+		print("Player left the chest area")
+	
 func _on_open_chest_requested() -> void:
 	animated_chest.play("default")

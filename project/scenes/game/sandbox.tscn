@@ -13,4 +13,4 @@ position = Vector2(483, 227)
 zoom = Vector2(5, 5)
 
 [node name="Chest" parent="." instance=ExtResource("2_4klvo")]
-position = Vector2(326, 165)
+position = Vector2(481, 188)

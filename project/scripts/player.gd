@@ -36,6 +36,7 @@ func _physics_process(_delta: float) -> void:
 	get_input()
 	move_and_slide()
 	
-	if _can_interact_with_chest and Input.is_action_pressed("interact"):
+	if _can_interact_with_chest and Input.is_action_just_pressed("interact"):
 		EventBus.emit_signal("open_chest_requested")
 		print("player requested to open chest")
+		_can_interact_with_chest = false

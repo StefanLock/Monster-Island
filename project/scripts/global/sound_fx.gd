@@ -1,13 +1,28 @@
 extends Node
 
-@export var menu_music := AudioStream
-@export var game_music := AudioStream
+# These are the AudioStream resources. Set them in the Autoload Inspector.
+@export var menu_music: AudioStream
+@export var game_music: AudioStream
+@export var chest_sound: AudioStream
 
-# Called when the node enters the scene tree for the first time.
+# This is the AudioStreamPlayer node.
+var sfx_player := AudioStreamPlayer.new()
+
 func _ready() -> void:
-	pass # Replace with function body.
+	if not is_inside_tree():
+		push_warning("SoundFx autload not present")
+		return
+	
+	add_child(sfx_player)
+	sfx_player.bus = "SFX"
+	
+	# Connect to the EventBus signal using modern Godot 4 syntax
+	EventBus.open_chest_requested.connect(_on_open_chest_requested)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_open_chest_requested() -> void:
+	# This should now work without any errors
+	if chest_sound:
+		sfx_player.stream = chest_sound
+		sfx_player.play()
+	else:
+		push_warning("Chest Open SFX sound not assigned in autload export")
