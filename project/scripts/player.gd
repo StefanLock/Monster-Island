@@ -1,12 +1,14 @@
 extends CharacterBody2D
 
 @export var speed := 100.0
+@export var health := 6
 @onready var _animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var _can_interact_with_chest : bool = false
 
 func _ready() -> void:
 	EventBus.connect("player_entered_chest_area", _on_player_entered_chest_area)
+	EventBus.connect("player_damage", _on_player_damage)
 	
 func get_input() -> void:
 	var input_direction: Vector2 = Input.get_vector("left", "right", "up", "down")
@@ -31,6 +33,11 @@ func get_input() -> void:
 
 func _on_player_entered_chest_area() -> void:
 	_can_interact_with_chest = true
+
+func _on_player_damage() -> void:
+	health = health - 1
+	if health == 0:
+		emit_signal("player_died")
 
 func _physics_process(_delta: float) -> void:
 	get_input()

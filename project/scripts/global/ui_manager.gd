@@ -8,4 +8,5 @@ func _ready() -> void:
 	EventBus.connect("player_died", _on_player_died)
 
 func _on_player_died() -> void:
-	get_tree().paused = true
+	get_tree().quit()
+#	probably needs to be pause rather than quite

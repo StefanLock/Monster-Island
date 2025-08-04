@@ -2,6 +2,7 @@ extends Node
 
 # Player Events
 signal player_died()
+signal player_damage()
 
 # Enemy Events
 signal enemy_died()

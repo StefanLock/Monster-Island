@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+@export var is_open := false
+
 @onready var animated_chest: AnimatedSprite2D = $AnimatedChest
 
 func _ready() -> void:
@@ -22,4 +24,8 @@ func _on_chest_area_body_exited(body: Node) -> void:
 		print("Player left the chest area")
 	
 func _on_open_chest_requested() -> void:
-	animated_chest.play("default")
+	if not is_open:
+		animated_chest.play("default")
+		
+		is_open = true
+	

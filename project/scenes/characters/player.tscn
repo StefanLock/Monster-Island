@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://0i6uhgj7ibr0"]
+[gd_scene load_steps=33 format=3 uid="uid://0i6uhgj7ibr0"]
 
 [ext_resource type="Script" uid="uid://c74t0oyx3k4uk" path="res://scripts/player.gd" id="1_plwmo"]
 [ext_resource type="Texture2D" uid="uid://3j813grdcvei" path="res://assets/characters/taylor/hero_idle_DOWN.png" id="2_gmphs"]
@@ -205,6 +205,9 @@ animations = [{
 radius = 6.0
 height = 14.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qgnko"]
+radius = 13.0
+
 [node name="player" type="CharacterBody2D" groups=["player"]]
 z_index = 1
 y_sort_enabled = true
@@ -215,6 +218,11 @@ script = ExtResource("1_plwmo")
 sprite_frames = SubResource("SpriteFrames_1we82")
 animation = &"idle_down"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionBody" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_ha2mi")
+
+[node name="attack_area" type="Area2D" parent="."]
+
+[node name="CollisionArea" type="CollisionShape2D" parent="attack_area"]
+shape = SubResource("CircleShape2D_qgnko")
