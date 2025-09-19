@@ -1,6 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://c726hgw7gv0ka"]
+[gd_scene load_steps=18 format=3 uid="uid://c726hgw7gv0ka"]
 
+[ext_resource type="Script" uid="uid://biawfaacn0jya" path="res://scripts/enemy.gd" id="1_lcpjj"]
 [ext_resource type="Texture2D" uid="uid://duvpi7eym345f" path="res://assets/characters/enemies/scorpion.png" id="1_xmuqs"]
+[ext_resource type="Resource" uid="uid://df2m2pki03tkx" path="res://scenes/characters/enemy_data/scorpion_stats.tres" id="2_ptxal"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lcpjj"]
 atlas = ExtResource("1_xmuqs")
@@ -125,12 +127,14 @@ animations = [{
 
 [node name="Scorpion" type="CharacterBody2D"]
 texture_filter = 1
+script = ExtResource("1_lcpjj")
+stats = ExtResource("2_ptxal")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_q7ye0")
 animation = &"move_up"
-frame = 2
-frame_progress = 0.980384
+frame = 3
+frame_progress = 0.705353
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 12)

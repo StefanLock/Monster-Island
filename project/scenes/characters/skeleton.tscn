@@ -1,6 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://d4ep0sjhiraur"]
+[gd_scene load_steps=18 format=3 uid="uid://d4ep0sjhiraur"]
 
+[ext_resource type="Script" uid="uid://biawfaacn0jya" path="res://scripts/enemy.gd" id="1_bf3q5"]
 [ext_resource type="Texture2D" uid="uid://cjqdrrkiunr5f" path="res://assets/characters/enemies/skeleton.png" id="1_kcsnh"]
+[ext_resource type="Resource" uid="uid://s6avdcg0stwl" path="res://scenes/characters/enemy_data/skeleton_stats.tres" id="2_34pwv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bf3q5"]
 atlas = ExtResource("1_kcsnh")
@@ -127,6 +129,8 @@ height = 10.0
 
 [node name="Skeleton" type="CharacterBody2D"]
 texture_filter = 1
+script = ExtResource("1_bf3q5")
+stats = ExtResource("2_34pwv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2y572")

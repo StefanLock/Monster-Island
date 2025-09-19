@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=2 format=3 uid="uid://ce8dqs6ympjvx"]
+
+[ext_resource type="Script" uid="uid://jwjxvroeu1hh" path="res://resources/enemy_stats.gd" id="1_ooxtp"]
+
+[resource]
+script = ExtResource("1_ooxtp")
+health = 100
+attack_damage = 10
+speed = 100
+xp_on_death = 50
+enemy_name = "Unnamed Enemy"
+description = "A generic enemy."
+unique_ability = ""
+metadata/_custom_type_script = "uid://jwjxvroeu1hh"
