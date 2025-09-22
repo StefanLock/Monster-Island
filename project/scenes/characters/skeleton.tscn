@@ -127,7 +127,7 @@ animations = [{
 radius = 5.0
 height = 10.0
 
-[node name="Skeleton" type="CharacterBody2D"]
+[node name="Skeleton" type="CharacterBody2D" groups=["basic_enemy"]]
 texture_filter = 1
 script = ExtResource("1_bf3q5")
 stats = ExtResource("2_34pwv")

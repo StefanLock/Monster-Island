@@ -31,6 +31,11 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=2
 
+[global_group]
+
+basic_enemy=""
+player=""
+
 [input]
 
 up={

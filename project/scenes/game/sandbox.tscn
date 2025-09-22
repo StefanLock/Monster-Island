@@ -1,16 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjg4og7qt11no"]
+[gd_scene load_steps=4 format=3 uid="uid://cjg4og7qt11no"]
 
 [ext_resource type="PackedScene" uid="uid://0i6uhgj7ibr0" path="res://scenes/characters/player.tscn" id="1_0xfq3"]
 [ext_resource type="PackedScene" uid="uid://krgxpxl4oek2" path="res://scenes/objects/chest.tscn" id="2_4klvo"]
+[ext_resource type="PackedScene" uid="uid://c726hgw7gv0ka" path="res://scenes/characters/scorpion.tscn" id="3_4klvo"]
 
 [node name="Sandbox" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_0xfq3")]
-position = Vector2(483, 227)
+position = Vector2(190, 108)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(483, 227)
+position = Vector2(190, 108)
 zoom = Vector2(5, 5)
 
 [node name="Chest" parent="." instance=ExtResource("2_4klvo")]
-position = Vector2(481, 188)
+position = Vector2(188, 69)
+
+[node name="Scorpion" parent="." instance=ExtResource("3_4klvo")]
+position = Vector2(31, 25)
