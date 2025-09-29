@@ -14,7 +14,10 @@ func _ready() -> void:
 
 # Change the function signature
 func _on_chest_area_body_entered(body: Node) -> void:
-	if body.is_in_group("player"):
+	if is_open:
+		print("Chest is already open")
+		return
+	elif body.is_in_group("player"):
 		EventBus.player_entered_chest_area.emit()
 		print("Player is near the chest")
 

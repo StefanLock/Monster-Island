@@ -1,6 +1,6 @@
 [gd_scene load_steps=19 format=3 uid="uid://c726hgw7gv0ka"]
 
-[ext_resource type="Script" uid="uid://biawfaacn0jya" path="res://scripts/enemy.gd" id="1_lcpjj"]
+[ext_resource type="Script" uid="uid://biawfaacn0jya" path="res://scripts/enemyL1.gd" id="1_lcpjj"]
 [ext_resource type="Texture2D" uid="uid://duvpi7eym345f" path="res://assets/characters/enemies/scorpion.png" id="1_xmuqs"]
 [ext_resource type="Resource" uid="uid://df2m2pki03tkx" path="res://scenes/characters/enemy_data/scorpion_stats.tres" id="2_ptxal"]
 
@@ -126,6 +126,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_25vem"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ptxal"]
+radius = 12.0
 
 [node name="Scorpion" type="CharacterBody2D" groups=["basic_enemy"]]
 texture_filter = 1

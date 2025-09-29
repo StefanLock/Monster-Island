@@ -4,11 +4,11 @@
 
 [resource]
 script = ExtResource("1_qoy8s")
-health = 10
+health = 149
 attack_damage = 10
 speed = 100
 xp_on_death = 50
-enemy_name = "Unnamed Enemy"
-description = "A generic enemy."
+enemy_name = "Scorpion"
+description = "basic enemy - scorpion"
 unique_ability = ""
 metadata/_custom_type_script = "uid://jwjxvroeu1hh"
