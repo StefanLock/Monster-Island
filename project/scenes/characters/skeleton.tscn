@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://d4ep0sjhiraur"]
+[gd_scene load_steps=20 format=3 uid="uid://d4ep0sjhiraur"]
 
 [ext_resource type="Script" uid="uid://biawfaacn0jya" path="res://scripts/enemyL1.gd" id="1_bf3q5"]
 [ext_resource type="Texture2D" uid="uid://cjqdrrkiunr5f" path="res://assets/characters/enemies/skeleton.png" id="1_kcsnh"]
@@ -130,6 +130,9 @@ height = 10.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_34pwv"]
 radius = 12.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fgxng"]
+radius = 73.0
+
 [node name="Skeleton" type="CharacterBody2D" groups=["basic_enemy"]]
 texture_filter = 1
 script = ExtResource("1_bf3q5")
@@ -148,3 +151,9 @@ shape = SubResource("CapsuleShape2D_pblb3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Damage_area"]
 position = Vector2(0, 12)
 shape = SubResource("CircleShape2D_34pwv")
+
+[node name="Detection_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection_area"]
+position = Vector2(0, 16)
+shape = SubResource("CircleShape2D_fgxng")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c726hgw7gv0ka"]
+[gd_scene load_steps=20 format=3 uid="uid://c726hgw7gv0ka"]
 
 [ext_resource type="Script" uid="uid://biawfaacn0jya" path="res://scripts/enemyL1.gd" id="1_lcpjj"]
 [ext_resource type="Texture2D" uid="uid://duvpi7eym345f" path="res://assets/characters/enemies/scorpion.png" id="1_xmuqs"]
@@ -128,6 +128,9 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ptxal"]
 radius = 12.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_lnf4h"]
+radius = 88.2043
+
 [node name="Scorpion" type="CharacterBody2D" groups=["basic_enemy"]]
 texture_filter = 1
 script = ExtResource("1_lcpjj")
@@ -148,3 +151,9 @@ shape = SubResource("CircleShape2D_25vem")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Damage_area"]
 position = Vector2(0, 12)
 shape = SubResource("CircleShape2D_ptxal")
+
+[node name="Detection_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection_area"]
+position = Vector2(0, 13)
+shape = SubResource("CircleShape2D_lnf4h")

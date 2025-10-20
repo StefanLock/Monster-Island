@@ -5,10 +5,13 @@ extends CharacterBody2D
 @onready var _animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 var _can_interact_with_chest : bool = false
+@onready var attack_area: Area2D = $attack_area
 
 func _ready() -> void:
 	EventBus.connect("player_entered_chest_area", _on_player_entered_chest_area)
 	EventBus.connect("player_damage", _on_player_damage)
+	
+	attack_area.body_entered.connect(_on_attack_area_area_entered)
 	
 func get_input() -> void:
 	var input_direction: Vector2 = Input.get_vector("left", "right", "up", "down")
@@ -47,3 +50,8 @@ func _physics_process(_delta: float) -> void:
 		EventBus.emit_signal("open_chest_requested")
 		print("player requested to open chest")
 		_can_interact_with_chest = false
+
+
+func _on_attack_area_area_entered(body: Node) -> void:
+	if body.is_in_group("basic_enemy"):
+		print("Enemy able to attack")

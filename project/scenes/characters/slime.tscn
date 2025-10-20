@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://da5p8fihp2foi"]
+[gd_scene load_steps=20 format=3 uid="uid://da5p8fihp2foi"]
 
 [ext_resource type="Texture2D" uid="uid://d0rkupx4qhsfu" path="res://assets/characters/enemies/slime.png" id="1_dm4hg"]
 [ext_resource type="Script" uid="uid://biawfaacn0jya" path="res://scripts/enemyL1.gd" id="1_v1yb0"]
@@ -129,6 +129,9 @@ radius = 6.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_boxg1"]
 radius = 12.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_gh1sf"]
+radius = 45.0111
+
 [node name="Slime" type="CharacterBody2D" groups=["basic_enemy"]]
 script = ExtResource("1_v1yb0")
 stats = ExtResource("2_boxg1")
@@ -146,3 +149,9 @@ shape = SubResource("CircleShape2D_2u7ff")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Damage_area"]
 position = Vector2(0, 12)
 shape = SubResource("CircleShape2D_boxg1")
+
+[node name="Detection_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detection_area"]
+position = Vector2(0, 13)
+shape = SubResource("CircleShape2D_gh1sf")
