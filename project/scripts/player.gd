@@ -55,3 +55,5 @@ func _physics_process(_delta: float) -> void:
 func _on_attack_area_area_entered(body: Node) -> void:
 	if body.is_in_group("basic_enemy"):
 		print("Enemy able to attack")
+		print(health)
+		_on_player_damage()
