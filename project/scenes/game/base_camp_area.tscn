@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhoi30cw5k8gf"]
+
+[ext_resource type="TileSet" uid="uid://b4cyf0a5xaei" path="res://resources/world.tres" id="1_ofdm1"]
+
+[node name="base_camp_area" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = ExtResource("1_ofdm1")
