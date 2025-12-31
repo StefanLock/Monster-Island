@@ -2830,6 +2830,7 @@ texture = ExtResource("4_mep7r")
 9:12/0 = 0
 10:12/0 = 0
 11:12/0 = 0
+11:12/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -2.27521, 8, -1.7806, 8, -8, -8, -8)
 13:12/0 = 0
 14:12/0 = 0
 15:12/0 = 0
