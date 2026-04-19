@@ -4,9 +4,11 @@ extends CharacterBody2D
 @export var stats: EnemyStats
 
 var current_health: int
+var target: Node
 
 # Use a specific reference to the damage area for clarity.
 @onready var damage_area: Area2D = $Damage_area
+@onready var detection_area: Area2D = $Detection_area
 
 func _ready() -> void:
 	if not stats:
@@ -18,9 +20,19 @@ func _ready() -> void:
 	print(stats.enemy_name, " has spawned with ", current_health, " health.")
 
 	damage_area.body_entered.connect(_on_damage_area_body_entered)
+	detection_area.body_entered.connect(_on_detection_area_body_entered)
 
 	EventBus.connect("enemy_damaged", take_damage)
 
+func _physics_process(delta: float) -> void:
+	if target:
+		var direction = global_position.direction_to(target.global_position)
+		velocity = direction * stats.speed
+		move_and_slide()
+		
+func _on_detection_area_body_entered(body: Node) -> void:
+	if body.is_in_group("player"):
+		target = body
 
 func _on_damage_area_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):

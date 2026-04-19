@@ -3,7 +3,8 @@ extends Node
 # Player Events
 signal player_died()
 signal player_damage()
-signal player_attack
+signal player_attack()
+signal player_action()
 
 # Enemy Events
 signal enemy_died()
@@ -15,5 +16,4 @@ signal game_over()
 
 # Chest events
 signal player_entered_chest_area()
-signal player_exited_chest_area()
-signal open_chest_requested()
+signal chest_open()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://krgxpxl4oek2"]
+[gd_scene format=3 uid="uid://krgxpxl4oek2"]
 
 [ext_resource type="Texture2D" uid="uid://crumlqg3uog8k" path="res://assets/world/chest.png" id="1_bas4e"]
 [ext_resource type="Script" uid="uid://iubmk53oxu72" path="res://scripts/chest.gd" id="1_opa1x"]
@@ -59,21 +59,21 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bas4e"]
 size = Vector2(17, 20)
 
-[node name="Chest" type="StaticBody2D"]
+[node name="Chest" type="StaticBody2D" unique_id=616985124]
 texture_filter = 1
 script = ExtResource("1_opa1x")
 
-[node name="Collision" type="CollisionShape2D" parent="."]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1245606695]
 y_sort_enabled = true
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_opa1x")
 
-[node name="AnimatedChest" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedChest" type="AnimatedSprite2D" parent="." unique_id=17231020]
 sprite_frames = SubResource("SpriteFrames_or75c")
 
-[node name="ChestArea" type="Area2D" parent="AnimatedChest"]
+[node name="ChestArea" type="Area2D" parent="AnimatedChest" unique_id=2138510981]
 y_sort_enabled = true
 
-[node name="OpenChestArea" type="CollisionShape2D" parent="AnimatedChest/ChestArea"]
+[node name="OpenChestArea" type="CollisionShape2D" parent="AnimatedChest/ChestArea" unique_id=1253160966]
 position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_bas4e")

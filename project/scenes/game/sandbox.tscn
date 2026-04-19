@@ -1,20 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjg4og7qt11no"]
+[gd_scene format=3 uid="uid://cjg4og7qt11no"]
 
 [ext_resource type="PackedScene" uid="uid://0i6uhgj7ibr0" path="res://scenes/characters/player.tscn" id="1_0xfq3"]
 [ext_resource type="PackedScene" uid="uid://krgxpxl4oek2" path="res://scenes/objects/chest.tscn" id="2_4klvo"]
 [ext_resource type="PackedScene" uid="uid://c726hgw7gv0ka" path="res://scenes/characters/scorpion.tscn" id="3_4klvo"]
 
-[node name="Sandbox" type="Node2D"]
+[node name="Sandbox" type="Node2D" unique_id=1832475542]
 
-[node name="player" parent="." instance=ExtResource("1_0xfq3")]
+[node name="player" parent="." unique_id=43770544 instance=ExtResource("1_0xfq3")]
 position = Vector2(190, 108)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1840448783]
 position = Vector2(190, 108)
 zoom = Vector2(5, 5)
 
-[node name="Chest" parent="." instance=ExtResource("2_4klvo")]
+[node name="Chest" parent="." unique_id=628942639 instance=ExtResource("2_4klvo")]
 position = Vector2(188, 69)
 
-[node name="Scorpion" parent="." instance=ExtResource("3_4klvo")]
+[node name="Scorpion" parent="." unique_id=371413084 instance=ExtResource("3_4klvo")]
 position = Vector2(31, 25)
+
+[node name="Chest2" parent="." unique_id=616985124 instance=ExtResource("2_4klvo")]
+position = Vector2(283, 40)

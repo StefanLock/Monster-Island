@@ -17,10 +17,9 @@ func _ready() -> void:
 	sfx_player.bus = "SFX"
 	
 	# Connect to the EventBus signal using modern Godot 4 syntax
-	EventBus.open_chest_requested.connect(_on_open_chest_requested)
+	EventBus.chest_open.connect(_on_chest_open)
 
-func _on_open_chest_requested() -> void:
-	# This should now work without any errors
+func _on_chest_open() -> void:
 	if chest_sound:
 		sfx_player.stream = chest_sound
 		sfx_player.play()
