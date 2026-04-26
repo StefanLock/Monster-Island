@@ -147,8 +147,6 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_ptxal"]
 radius = 12.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ykmq7"]
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_lnf4h"]
 radius = 88.2043
 
@@ -169,20 +167,17 @@ position = Vector2(0, 12)
 shape = SubResource("CircleShape2D_25vem")
 
 [node name="Damage_area" type="Area2D" parent="." unique_id=64765898]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Damage_area" unique_id=320407765]
+visible = false
 position = Vector2(0, 12)
 shape = SubResource("CircleShape2D_ptxal")
 
-[node name="Attack_area" type="Area2D" parent="." unique_id=103967698]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack_area" unique_id=1943426157]
-position = Vector2(0, 13)
-scale = Vector2(3, 3)
-shape = SubResource("CircleShape2D_ykmq7")
-
 [node name="Detection_area" type="Area2D" parent="." unique_id=1082367329]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection_area" unique_id=326758556]
+visible = false
 position = Vector2(0, 13)
 shape = SubResource("CircleShape2D_lnf4h")
